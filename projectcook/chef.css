@@ -1,0 +1,71 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://wallpaperaccess.com/full/2882747.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin: 20px 0;
+    font-size: 2.5em;
+    color: #000; /* Black color for the text */
+}
+
+.chef-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+}
+
+.chef {
+    display: flex;
+    justify-content: space-between;
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin: 10px;
+    width: 100%;
+}
+
+.chef-description {
+    flex: 1;
+    text-align: left;
+    padding-right: 20px;
+}
+
+.chef-photo {
+    flex: 0 0 150px;
+}
+
+.chef-photo img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+.buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4CAF50; /* Green color for the buttons */
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #45a049; /* Darker green for hover effect */
+}

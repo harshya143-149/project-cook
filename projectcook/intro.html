@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Ankii's Kitchen</title>
+    <link rel="stylesheet" href="intro.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#home" onclick="navigateTo('home')">Home</a></li>
+            <li><a href="#about" onclick="navigateTo('about')">About Us</a></li>
+            <li><a href="#contact" onclick="navigateTo('contact')">Contact Us</a></li>
+            <li><a href="#profile" onclick="navigateTo('profile')">Profile</a></li>
+        </ul>
+    </nav>
+    <main id="content">
+        <h1>Welcome to Ankii's Kitchen</h1>
+        <h2>Discover delicious recipes based on your favorite ingredients!</h2>
+        <div class="container">
+            <a href="main.html">
+                <button>Explore More</button>
+            </a>
+        </div>
+    </main>
+    <footer>
+        <p>© 2024 Ankii's Kitchen. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function navigateTo(section) {
+            const content = document.getElementById('content');
+            if (section === 'home') {
+                window.location.href = 'intro.html';
+            } else if (section === 'about') {
+                content.innerHTML = `
+                    <h1>About Us</h1>
+                    <table>
+                        <tr>
+                            <th>Feature</th>
+                            <th>Description</th>
+                        </tr>
+                        <tr>
+                            <td>Personalized Recommendations</td>
+                            <td>Our advanced algorithm suggests recipes based on your favorite ingredients, dietary restrictions, and cooking preferences.</td>
+                        </tr>
+                        <tr>
+                            <td>Easy-to-Follow Instructions</td>
+                            <td>Each recipe comes with step-by-step instructions, complete with photos and videos to guide you through the cooking process.</td>
+                        </tr>
+                        <tr>
+                            <td>Community Engagement</td>
+                            <td>Join our community of food enthusiasts to share your culinary creations, exchange tips, and get inspired by others.</td>
+                        </tr>
+                        <tr>
+                            <td>Expert Tips</td>
+                            <td>Learn from professional chefs and nutritionists who share their insights and tips to make your cooking experience even better.</td>
+                        </tr>
+                        <tr>
+                            <td>Sustainable Choices</td>
+                            <td>We promote sustainable cooking practices by offering recipes that minimize food waste and use locally sourced ingredients.</td>
+                        </tr>
+                    </table>
+                `;
+            } else if (section === 'contact') {
+                content.innerHTML = '<h1>Contact Us</h1><p>You can visit our insta page Ankii@420.<br>you can also mail us at Anki14119119.</p>';
+            } else if (section === 'profile') {
+                content.innerHTML = '<h1>Profile</h1><p>Manage your profile here.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

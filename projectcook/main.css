@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('https://wallpaperaccess.com/full/2882747.jpg');
+    background-size: cover;
+    background-blend-mode: darken;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+}
+
+nav {
+    width: 100%;
+    background-color: #ff6347; /* Orange color for the navigation bar */
+    overflow: hidden;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul li {
+    padding: 14px 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+
+nav ul li a:hover {
+    background-color: #e5533d; /* Darker shade of orange for hover effect */
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    text-align: center;
+    position: relative;
+}
+
+h1 {
+    margin: 0;
+    font-size: 2.5em;
+    color: #000; /* Black color for the text */
+    z-index: 1;
+}
+
+.intro-box, .selector-box, .recipe-box {
+    background-color: rgba(255, 255, 255, 0.9); /* White background with slight transparency */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    z-index: 1;
+    margin: 10px 0;
+}
+
+.intro-box p, .selector-box label, .recipe-box p {
+    margin: 0;
+    color: #4CAF50; /* Green color for the text */
+}
+
+.selector-box select {
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+footer {
+    background-color: #ff6347; /* Orange color for the footer */
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}

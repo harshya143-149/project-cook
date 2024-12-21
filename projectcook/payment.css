@@ -1,0 +1,64 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('https://okcredit-blog-images-prod.storage.googleapis.com/2021/09/paymentmethods1.jpg') no-repeat center center fixed;
+    background-size: cover;
+    /* Blurs the background image */
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.9); /* Slightly transparent background */
+    padding: 80px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 600px; /* Increased width */
+    text-align: center;
+    position: relative;
+    z-index: 1; /* Ensures the container is above the blurred background */
+}
+
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+    font-size: 2em; /* Increased font size */
+}
+
+label {
+    display: block;
+    margin-top: 10px;
+    text-align: left;
+    font-size: 1.2em; /* Increased font size */
+}
+
+input, select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1.1em; /* Increased font size */
+}
+
+.payment-details {
+    display: none;
+    margin-top: 20px;
+    text-align: left;
+}
+
+#cardDetails, #cashDetails, #scannerDetails {
+    border: 1px solid #ccc;
+    padding: 80px;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+img {
+    width: 150px;
+    height: 150px;
+    margin-top: 10px;
+}

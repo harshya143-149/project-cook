@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Selector</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+    <main>
+        <h1>Welcome to Ankii's Kitchen</h1>
+        <form>
+            <label for="ingredient">Choose an Ingredient:</label>
+            <select id="ingredient" name="ingredient" onchange="updateRecipes()">
+                <option value="Paneer">Paneer</option>
+                <option value="Chicken">Chicken</option>
+                <option value="Rice">Rice</option>
+                <option value="Magiee">Magiee</option>
+            </select>
+            <br><br>
+            <label for="recipe">Choose a Recipe:</label>
+            <select id="recipe" name="recipe" onchange="updateDetails()">
+                <!-- Options will be populated based on the selected ingredient -->
+            </select>
+            <br><br>
+        </form>
+
+        <div id="recipeDetails" style="display:none;">
+            <h2 id="recipeTitle"></h2>
+            <iframe id="recipeVideo" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <a href="chef.html">
+            <button>Proceed for the chief detailes</button>
+        </a>
+    </main>
+    <footer>
+        <p>© 2024 Ankii's Kitchen. All rights reserved.</p>
+    </footer>
+    <script>
+        function updateRecipes() {
+            const ingredient = document.getElementById('ingredient').value;
+            const recipeSelect = document.getElementById('recipe');
+            recipeSelect.innerHTML = '';
+
+            let recipes = [];
+            if (ingredient === 'Paneer') {
+                recipes = ['Paneer Bhurji', 'Paneer Butter Masala', 'Paneer 65', 'Matar Paneer'];
+            } else if (ingredient === 'Chicken') {
+                recipes = ['Chicken Curry', 'Chicken Biryani', 'Chicken 65', 'Chicken Lollipop'];
+            } else if (ingredient === 'Rice') {
+                recipes = ['Fried Rice', 'Kolambi Bhaat', 'Chicken Triple Schezwan Rice', 'Meethe Chawal'];
+            } else if (ingredient === 'Magiee') {
+                recipes = ['Chili Garlic Magiee', 'Curry Magiee', 'Cheese Magiee', 'Masaledar Magiee'];
+            }
+
+            recipes.forEach(recipe => {
+                const option = document.createElement('option');
+                option.value = recipe.toLowerCase().replace(/ /g, '_');
+                option.textContent = recipe;
+                recipeSelect.appendChild(option);
+            });
+        }
+
+        function updateDetails() {
+            const recipe = document.getElementById('recipe').value;
+            const recipeDetails = {
+                'paneer_bhurji': {
+                    title: 'Paneer Bhurji',
+                    video: 'https://www.youtube.com/embed/KgW--wj5iBM'
+                },
+                'paneer_butter_masala': {
+                    title: 'Paneer Butter Masala',
+                    video: 'https://www.youtube.com/embed/U1LVDFwi8qI'
+                },
+                'paneer_65': {
+                    title: 'Paneer 65',
+                    video: 'https://www.youtube.com/embed/Rs49YKc8iJw'
+                },
+                'matar_paneer': {
+                    title: 'Matar Paneer',
+                    video: 'https://www.youtube.com/embed/f2oVTs-bRGg'
+                },
+                'chicken_curry': {
+                    title: 'Chicken Curry',
+                    video: 'https://www.youtube.com/embed/JH5swnkC8Ig'
+                },
+                'chicken_biryani': {
+                    title: 'Chicken Biryani',
+                    video: 'https://www.youtube.com/embed/uygb9O-MDPw'
+                },
+                'chicken_65': {
+                    title: 'Chicken 65',
+                    video: 'https://www.youtube.com/embed/abcd1234'
+                },
+                'chicken_lollipop': {
+                    title: 'Chicken Lollipop',
+                    video: 'https://www.youtube.com/embed/nQDp6-7963k'
+                },
+                'fried_rice': {
+                    title: 'Fried Rice',
+                    video: 'https://www.youtube.com/embed/P0ullgo0Lnw'
+                },
+                'kolambi_bhaat': {
+                    title: 'Kolambi Bhaat',
+                    video: 'https://www.youtube.com/embed/rYg4J8oHjZs'
+                },
+                'chicken_triple_schezwan_rice': {
+                    title: 'Chicken Triple Schezwan Rice',
+                    video: 'https://www.youtube.com/embed/abcd5678'
+                },
+                'meethe_chawal': {
+                    title: 'Meethe Chawal',
+                    video: 'https://www.youtube.com/embed/abcd9101'
+                },
+                'chili_garlic_magiee': {
+                    title: 'Chili Garlic Magiee',
+                    video: 'https://www.youtube.com/embed/abcd1122'
+                },
+                'curry_magiee': {
+                    title: 'Curry Magiee',
+                    video: 'https://www.youtube.com/embed/abcd3344'
+                },
+                'cheese_magiee': {
+                    title: 'Cheese Magiee',
+                    video: 'https://www.youtube.com/embed/abcd5566'
+                },
+                'masaledar_magiee': {
+                    title: 'Masaledar Magiee',
+                    video: 'https://www.youtube.com/embed/abcd7788'
+                }
+            };
+
+            if (recipeDetails[recipe]) {
+                document.getElementById('recipeTitle').textContent = recipeDetails[recipe].title;
+                document.getElementById('recipeVideo').src = recipeDetails[recipe].video;
+                document.getElementById('recipeDetails').style.display = 'block';
+            } else {
+                document.getElementById('recipeDetails').style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
